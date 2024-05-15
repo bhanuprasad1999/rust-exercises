@@ -1,30 +1,20 @@
-use std::io;
 
-fn user_input() -> i32{
-    let mut input:String = String::new();
-    let output:i32 ;
-    match io::stdin().read_line(&mut input){
-        Ok(n) => {
-            println!("{n}");
-            output = input.trim().parse::<i32>().unwrap();
-            return output
-        }
-        Err(error)=>{
-            panic!("Expected Integers, but got String!{}", error);
-        }
+mod giga_second;
+mod type_input;
 
-    }
-
-}
 
 fn main() {
     let choice :i32; 
-    choice = user_input();
+    choice = type_input::ip_main::int_input();
     println!("One month challenge of coding with RUST");
     println!("selected the {} choice", choice);
     match choice {
         1 => {
             println!("{}", choice);
+            giga_second::gs_main::giga_second();
+            let x = type_input::ip_main::string_input();
+            println!("{}", x);
+
         }
         _ => {
             print!("{} is not a valid choice", choice);
