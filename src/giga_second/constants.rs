@@ -1,0 +1,1 @@
+pub const GIGA_SECOND:i64 = 1_000_000_000;

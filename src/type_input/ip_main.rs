@@ -20,9 +20,8 @@ pub fn int_input() -> i32 {
 pub fn string_input() -> String{
     let mut input:String = String::new();
     match io::stdin().read_line(&mut input){
-        Ok(n) =>{
-            println!("{n}");
-            return input
+        Ok(_n) =>{
+            return input.trim().to_string()
         }
         Err(error)=>{
             panic!("Expected String, {}", error);
